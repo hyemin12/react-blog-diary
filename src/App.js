@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div className="logo">한줄 일기</div>
       </header>
+      <section className="contents">
+        <div className="month">2022년 2월</div>
+        <div className="post">
+          <ul className="left">
+            <li className="index">월</li>
+            <li className="date">14</li>
+          </ul>
+          <div className="diary">
+            열심히 공부중인데, 아직 너무 어렵다... ㅠㅠ
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

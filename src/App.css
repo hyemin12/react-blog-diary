@@ -1,38 +1,50 @@
-.App {
+/* Common */
+body {
+  font-family: "NanumSquare", "sans-serif";
+}
+li {
+  list-style: none;
+}
+
+/* header */
+.App header {
+  display: flex;
+  width: 100%;
+  background: #311b92;
+  padding: 20px;
+}
+
+.App header .logo {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* contents */
+.App .contents .month {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.App .contents .post {
+  display: flex;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.App .contents .post .left {
+  width: 5%;
+  padding: 10px 20px;
+  font-size: 14px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .contents .post .date {
+  padding-top: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App .contents .post .diary {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width: 100%;
+  border-left: none;
+  padding: 10px;
+  margin: 14px 0;
 }
