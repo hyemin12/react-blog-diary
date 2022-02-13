@@ -2,7 +2,7 @@
 
 ### npm ERR! code ENOENT(에러넘버 4058)
 
-```http
+```
 npm ERR! code ENOENT
 npm ERR! syscall open
 npm ERR! path C:\Users\user\Desktop\react-Blog/package.json
