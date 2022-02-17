@@ -11,4 +11,16 @@ export default [
     week: "화",
     date: 15,
   },
+  {
+    id: 2,
+    text: "나중에 삭제버튼도 만들어보자",
+    week: "목",
+    date: 17,
+  },
+  {
+    id: 3,
+    text: "자바스크립트 더더 공부하기",
+    week: "금",
+    date: 18,
+  },
 ];

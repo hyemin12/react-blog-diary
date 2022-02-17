@@ -5,19 +5,13 @@ import Data from "./data.js";
 function App() {
   let [contents, setContents] = useState(Data);
   let [plusContent, setPlusContent] = useState("");
-  let [heart, colorHeart] = useState([false, false]);
-
-  function heartColor(i) {
-    var copyHeart = [...heart];
-    copyHeart.unshift(false);
-    colorHeart(copyHeart);
-    console.log(copyHeart);
-  }
 
   const nextId = useRef(2);
 
   // 현재 날짜 가져오기
   let today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth();
   let weekArray = ["일", "월", "화", "수", "목", "금", "토"];
   let week = weekArray[today.getDay()];
   let date = today.getDate();
@@ -29,6 +23,7 @@ function App() {
       week,
       date,
     });
+
     setContents(contextData);
     nextId.current += 1; // nextId를 1씩 더하기
   }
@@ -38,13 +33,23 @@ function App() {
       <header>
         <div className="inner">
           <div className="logo">한줄 일기</div>
+          <a
+            className="icon-github"
+            href="https://github.com/hyemin12"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i className="fab fa-github" />
+          </a>
         </div>
       </header>
 
       <section className="contents">
         <div className="inner">
           <div className="top">
-            <div className="month">2022년 2월</div>
+            <div className="month">
+              {year}년 {month + 1}월
+            </div>
             <div className="input-box">
               <input
                 type="text"
@@ -59,7 +64,7 @@ function App() {
                 type="submit"
                 onClick={() => {
                   plusSubmit();
-                  heartColor();
+                  // addHeart();
                 }}
               >
                 ADD
@@ -83,15 +88,6 @@ function App() {
           <li className="date">{props.content.date}</li>
         </ul>
         <div className="diary">{props.content.text}</div>
-        <i
-          className="fas fa-heart icon"
-          style={heart === true ? { color: "red" } : { color: "grey" }}
-          onClick={() => {
-            heartColor([props.i](!heart));
-          }}
-        >
-          {heart[props.i]}
-        </i>
       </div>
     );
   }
